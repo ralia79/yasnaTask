@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Euclid_bold";
+    src: url(./Euclid_Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Euclid';
+    src: url(./Euclid_Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Euclid_Light';
+    src: url(./Euclid_Light.ttf);
+}
