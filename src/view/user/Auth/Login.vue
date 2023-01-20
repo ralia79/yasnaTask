@@ -67,12 +67,11 @@ export default {
     width: 25%;
     height: 70%;
     margin-top: 5%;
+    margin-bottom: 5%;
     position: relative;
 }
 
-p {
-    font-family: 'Euclid', serif !important;
-}
+
 
 input::placeholder {
     font-family: 'Euclid', serif !important;

@@ -5,6 +5,16 @@ body {
     margin: 0 !important;
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden !important;
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #DBEEFF;
+    height: 10px;
 }
 
 li {
@@ -28,6 +38,13 @@ li {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.ROW_Start {
+    display: flex;
+    flex-direction: row;
+    /* align-items: flex-start; */
+    justify-content: flex-start;
 }
 
 .column {
@@ -55,4 +72,8 @@ li {
 
 .mar50 {
     margin-top: 50px;
+}
+
+p {
+    font-family: 'Euclid', serif !important;
 }
