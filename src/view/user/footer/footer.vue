@@ -22,9 +22,14 @@
                     <li>Email : Contact@Yasna.Team</li>
                 </div>
             </div>
-            <div class="d-flex align-item-center justify-content-center mt-5">
+            <div class="d-flex align-item-center justify-content-between mt-5">
+                <p>© 2022</p>
                 <p>
                     Copyright © 2010-2022 Blog For YasnaTeam</p>
+
+                    <a href="https://yasna.team">
+                        <img src="../../../assets/yasna.png" class="iconStyle">
+                    </a>
             </div>
         </div>
     </footer>
@@ -45,6 +50,9 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    padding: 50px 0 0 0;
+    padding: 50px 0 20px 0;
+}
+.iconStyle {
+    width: 100px;
 }
 </style>
