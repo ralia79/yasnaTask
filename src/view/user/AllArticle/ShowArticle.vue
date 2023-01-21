@@ -1,11 +1,11 @@
 <template>
-    <div class=" mb-3 col-4">
+    <div class=" mb-3 col-md-4 col-6">
         <div class="ArticleItem  d-flex flex-column align-items-start justify-content-start">
             <p class="ArticleItem_title">
                 If we quantify the alarm, we can get to the FTP pixel through the online SSL interface!
             </p>
 
-            <p class="ArticleItem_desc">
+            <p class="ArticleItem_desc d-none d-md-flex">
                 Omnis perspiciatis qui quia commodi sequi modi. Nostrum quam aut cupiditate est facere omnis
                 possimus. Tenetur similique nemo illo soluta molestias facere quo. Ipsam totam facilis delectus
                 nihil quidem soluta vel est omnis.
@@ -31,7 +31,6 @@ export default {
 };
 </script>
 <style scoped>
-
 .Auther_name {
     font-size: 14px;
 }
@@ -46,6 +45,7 @@ export default {
     width: 40px;
     height: 40px;
 }
+
 .ArticleItem_title {
     font-weight: 600;
     font-size: 13px;
@@ -56,6 +56,13 @@ export default {
     font-size: 12px;
     line-height: 22px;
     color: #C9CCCF;
+
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.6em;
+    line-height: 1.8em;
 }
 
 .ArticleItem {

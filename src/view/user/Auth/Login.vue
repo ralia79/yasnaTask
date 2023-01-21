@@ -2,13 +2,13 @@
 <template>
 
     <div class="column_center all">
-        <div class="column">
-            <div class="d-flex flex-row align-items-center justify-content-between">
+        <div class="d-flex flex-column border_col">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
                 <p class="p-0 m-0">Email</p>
                 <input type="email" placeholder="Email" :value="Email_Controller">
             </div>
 
-            <div class="d-flex flex-row align-items-center justify-content-between mt-3">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between mt-3">
                 <p  class="p-0 m-0">Password</p>
                 <input type="password" placeholder="Password" :value="Password_Controller">
             </div>
@@ -59,12 +59,11 @@ export default {
     height: 100%;
 }
 
-.column {
+.border_col {
     padding: 50px;
     border-radius: 15px;
     border: 1px solid #DBEEFF;
-    justify-content: center;
-    width: 30%;
+    width: 50%;
     height: 70%;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -93,5 +92,15 @@ input:focus-visible {
     left: 5px;
     color: #0F8EFF;
     cursor: pointer;
+}
+
+
+@media only screen and (max-width : 762px){
+    .border_col {
+        width: 80%;
+    }
+    input {
+    width: 100%;
+}
 }
 </style>
