@@ -81,10 +81,12 @@ input {
     width: 60%;
     padding: 5px 10px;
     border-radius: 8px;
-
+    outline: none;
     border: 1px solid #0F8EFF;
 }
-
+input:focus-visible {
+    border: 1px solid #0F8EFF !important;
+}
 .abs_text {
     font-size: 12px;
     bottom: 0;

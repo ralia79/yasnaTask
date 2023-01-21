@@ -30,12 +30,12 @@
 <script>
 
 export default {
-    name :"SignUp" , 
-    data(){
+    name: "SignUp",
+    data() {
         return {
 
         }
-    }, 
+    },
     methods: {
         GoTo() {
             window.location.href = "/Login"
@@ -51,6 +51,7 @@ export default {
     width: 100%;
     height: 100%;
 }
+
 .column {
     padding: 50px;
     border-radius: 15px;
@@ -75,8 +76,12 @@ input {
     width: 70%;
     padding: 5px 10px;
     border-radius: 8px;
-
+    outline: none;
     border: 1px solid #0F8EFF;
+}
+
+input:focus-visible {
+    border: 1px solid #0F8EFF !important;
 }
 
 .abs_text {
