@@ -16,27 +16,40 @@
                 <input type="text" placeholder="Search">
             </div>
         </div>
-    </div>
 
+    </div>
+    <div class="spacer"></div>
+    <div class="baseArticles container d-flex flex-row align-items-center justify-content-between flex-wrap">
+        <ShowArticle v-for="item in 10" />
+    </div>
 </template>
 
 
-
 <script>
+import ShowArticle from './ShowArticle.vue';
 export default {
+    name: 'AllArticle',
+    props: [],
+
+    components: {
+        ShowArticle
+    },
     data() {
         return {
 
-        }
-    }, methods: {
+        };
+    },
+    methods: {
 
-    }
-}
-
+    },
+};
 </script>
 
 
 <style scoped>
+.spacer {
+    height: 30px;
+}
 .optionBarSearch input {
     padding: 10px 30px;
     border: 1px solid #EAF5FF;
