@@ -20,7 +20,7 @@
     </div>
     <div class="spacer"></div>
     <div class="baseArticles container d-flex flex-row align-items-center justify-content-between flex-wrap">
-        <ShowArticle v-for="item in 10" />
+        <ShowArticle v-for="item in 10"  @click="GoTo()"/>
     </div>
 </template>
 
@@ -40,7 +40,9 @@ export default {
         };
     },
     methods: {
-
+        GoTo(){
+            window.location.href = "/Article"
+        }
     },
 };
 </script>

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../view/user/Auth/Login.vue'
 import SignUp from '../view/user/Auth/SignUp.vue'
 import AllArticle from '../view/user/AllArticle/AllArticle.vue'
+import Article from '../view/user/Article/Article.vue'
 
 const router = createRouter({
     history: createWebHistory(
@@ -11,7 +12,11 @@ const router = createRouter({
             name: 'AllArticle',
             component: AllArticle
         },
-
+        {
+            path: '/Article',
+            name: 'Article',
+            component: Article
+        },
 
         {
             path: '/Login',

@@ -30,7 +30,8 @@ export default {
     },
 };
 </script>
-<style>
+<style scoped>
+
 .Auther_name {
     font-size: 14px;
 }
@@ -45,7 +46,6 @@ export default {
     width: 40px;
     height: 40px;
 }
-
 .ArticleItem_title {
     font-weight: 600;
     font-size: 13px;
