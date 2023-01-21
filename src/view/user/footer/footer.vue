@@ -1,16 +1,31 @@
 <template>
     <footer>
-        <div class="ROW_Start w100">
-            <div class="column">
-                <h3>YasnaTeam</h3>
-                <p>About Us</p>
-                <p>Privacy Policy</p>
-                <p>Contact us</p>
+        <div class="container">
+            <div class="d-flex flex-row align-item-start justify-content-between">
+                <div class="d-flex flex-row align-item-start justify-content-between">
+                    <div class="column me-4">
+                        <li class="h4">YasnaTeam</li>
+                        <li>About Us</li>
+                        <li>Privacy Policy</li>
+                        <li>Contact us</li>
+                    </div>
+                    <div class="column ms-4">
+                        <li class="h4">Community</li>
+                        <li>Blog</li>
+                        <li>Help Center</li>
+                        <li>Verasense.io Reviews</li>
+                    </div>
+                </div>
+                <div class="column">
+                    <li class="h4">Contact Us</li>
+                    <li>Telegram : +44 204 577 26 88</li>
+                    <li>Email : Contact@Yasna.Team</li>
+                </div>
             </div>
-        </div>
-        <div class="ROW">
-            <p>
-                Copyright © 2010-2022 Blog For YasnaTeam</p>
+            <div class="d-flex align-item-center justify-content-center mt-5">
+                <p>
+                    Copyright © 2010-2022 Blog For YasnaTeam</p>
+            </div>
         </div>
     </footer>
 </template>
@@ -23,9 +38,6 @@
 </script>
 
 <style>
-.w100 {
-    width: 100%;
-}
 footer {
     width: 100%;
     background: linear-gradient(269.54deg, #158CFD 4.94%, #5D79E8 84.5%);
@@ -33,5 +45,6 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    padding: 50px 0 0 0;
 }
 </style>

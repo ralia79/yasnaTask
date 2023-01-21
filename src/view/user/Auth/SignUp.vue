@@ -3,21 +3,21 @@
 
     <div class="column_center all">
         <div class="column">
-            <div class="ROW">
-                <p>Email</p>
+            <div class="d-flex flex-row align-items-center justify-content-between">
+                <p class="p-0 m-0">Email</p>
                 <input type="email" placeholder="Email">
             </div>
 
-            <div class="ROW">
-                <p>UserName</p>
+            <div class="d-flex flex-row align-items-center justify-content-between mt-3">
+                <p class="p-0 m-0">UserName</p>
                 <input type="text" placeholder="UserName">
             </div>
-            <div class="ROW">
-                <p>Password</p>
+            <div class="d-flex flex-row align-items-center justify-content-between mt-3">
+                <p class="p-0 m-0">Password</p>
                 <input type="password" placeholder="Password">
             </div>
             <div class="mar50"> </div>
-            <button class="btn">LOGIN</button>
+            <button class="btnCustom">LOGIN</button>
 
 
             <p class="abs_text" @click="GoTo()">you have account ? Login</p>
@@ -56,7 +56,7 @@ export default {
     border-radius: 15px;
     border: 1px solid #DBEEFF;
     justify-content: center;
-    width: 25%;
+    width: 30%;
     height: 70%;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -72,7 +72,7 @@ input::placeholder {
 }
 
 input {
-    width: 50%;
+    width: 70%;
     padding: 5px 10px;
     border-radius: 8px;
 

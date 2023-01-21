@@ -1,17 +1,12 @@
 <template>
-    <header class="ROW bg_custom">
-        <nav class="ROW">
-            <li @click="GoTo('/')">Home</li>
-            <li>About Us</li>
-        </nav>
-
-
-        <!-- Sign in Or Sign Up section -->
-
-        <button class="btn" @click="GoTo('/Login')">{{ btnText }}</button>
-
-
-
+    <header class="bg_custom">
+        <div class="container d-flex flex-row align-items-center justify-content-between">
+            <nav class="d-flex">
+                <li @click="GoTo('/')">Home</li>
+                <li>About Us</li>
+            </nav>
+            <button class="btnCustom" @click="GoTo('/Login')">{{ btnText }}</button>
+        </div>
     </header>
 
 </template>
