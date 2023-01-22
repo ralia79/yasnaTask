@@ -50,7 +50,6 @@ export default {
         } ,
 
         GetArticle (){
-            console.log("mounted")
         }
     },
 };
