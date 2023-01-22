@@ -5,30 +5,30 @@
 
             <div class="topArticle d-flex flex-row-reverse align-items-center justify-content-start  w-100">
                 <button class="d-flex flex-row align-items-center blueBG">
-                    <span class="material-symbols-outlined me-2">
+                    <span class="material-symbols-outlined me-md-2 me-0">
                         favorite
                     </span>
-                    <p class="p-0 m-0">25 like</p>
+                    <p class="p-0 m-0  d-none d-md-block">25 like</p>
 
                 </button>
 
                 <button class="d-flex flex-row align-items-center share me-2">
-                    <span class="material-symbols-outlined me-2">
+                    <span class="material-symbols-outlined  me-md-2 me-0">
                         share
                     </span>
-                    <p class="p-0 m-0">share</p>
+                    <p class="p-0 m-0  d-none d-md-block">share</p>
 
                 </button>
             </div>
 
 
             <div
-                class="TitleArticle d-flex flex-row align-items-center justify-content-between  w-100 position-relative  abstractOnject">
+                class="TitleArticle d-flex d-flex flex-column flex-md-row align-items-center justify-content-between  w-100 position-relative  abstractOnject">
                 <p class="title">
                     If we quantify the alarm, we can get to the FTP pixel through the online SSL interface!
 
                 </p>
-
+                <div class="spacer d-flex d-md-none"></div>
 
                 <div class="d-flex flex-row align-items-center Auther_Article">
                     <img src="../../../assets/article_avatar.png" alt="">
@@ -37,6 +37,7 @@
                         <p class="p-0 m-0 grey">June 27 ,2024</p>
                     </div>
                 </div>
+                <div class="spacer d-flex d-md-none"></div>
             </div>
 
 
@@ -52,8 +53,8 @@
 
 
 
-        <pre><article>
-           
+        <article class="mb-5">
+
             Today we will continue our series of integration tutorials with a quick guide on HubSpot SMS automations.
             All of the automations in this article can be created with the help of Zapier and TextMagic.
             If you’re looking for ways to automate your calendar, check out our previous guide for Google Calendar SMS
@@ -73,8 +74,8 @@
             do this before creating any Zap, or simply follow the connection steps as
             you go.. Send a confirmation text when someone fills out your HubSpot form; Receive SMS notifications
             whenever a new deal, ticket, or task is added to your HubSpot dashboard;
-          
-        </article> </pre>
+
+        </article>
     </div>
 
 </template>
@@ -101,6 +102,7 @@ export default {
 }
 
 .cover article {
+    width: 90%;
     color: #7D9DB9;
     font-family: 'Euclid';
     font-size: 18px;
@@ -163,5 +165,22 @@ export default {
     background: #DBEEFF;
     border-radius: 30px;
     color: #0F8EFF !important;
+}
+
+
+@media only screen and (max-width : 762px) {
+    .cover img {
+        width: 90%;
+    }
+
+    .TitleArticle .title {
+        font-size: 20px;
+        max-width: 90%;
+    }
+
+    .topArticle button {
+    border-radius: 50%;
+    padding:10px;
+}
 }
 </style>
