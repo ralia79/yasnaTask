@@ -27,6 +27,7 @@
 
 <script>
 import ShowArticle from './ShowArticle.vue';
+
 export default {
     name: 'AllArticle',
     props: [],
@@ -34,14 +35,22 @@ export default {
     components: {
         ShowArticle
     },
+    mounted() {
+        this.GetArticle()
+    } ,
     data() {
         return {
 
         };
     },
     methods: {
+        
         GoTo() {
             window.location.href = "/Article"
+        } ,
+
+        GetArticle (){
+            console.log("mounted")
         }
     },
 };
