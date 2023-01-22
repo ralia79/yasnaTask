@@ -25,16 +25,15 @@
             <div
                 class="TitleArticle d-flex d-flex flex-column flex-md-row align-items-center justify-content-between  w-100 position-relative  abstractOnject">
                 <p class="title">
-                    If we quantify the alarm, we can get to the FTP pixel through the online SSL interface!
-
+                    {{ this.title }}
                 </p>
                 <div class="spacer d-flex d-md-none"></div>
 
                 <div class="d-flex flex-row align-items-center Auther_Article">
-                    <img src="../../../assets/article_avatar.png" alt="">
+                    <img :src="this.image" alt="">
                     <div class="d-flex flex-column align-items-start justify-content-center ms-2">
-                        <p class="p-0 m-0 Auther_name"> Ali Roshan nia </p>
-                        <p class="p-0 m-0 grey">June 27 ,2024</p>
+                        <p class="p-0 m-0 Auther_name"> {{ this.author }} </p>
+                        <p class="p-0 m-0 grey">{{ this.createAt }}</p>
                     </div>
                 </div>
                 <div class="spacer d-flex d-md-none"></div>
@@ -54,27 +53,7 @@
 
 
         <article class="mb-5">
-
-            Today we will continue our series of integration tutorials with a quick guide on HubSpot SMS automations.
-            All of the automations in this article can be created with the help of Zapier and TextMagic.
-            If you’re looking for ways to automate your calendar, check out our previous guide for Google Calendar SMS
-            notifications.
-            HubSpot is a powerful CRM tool that businesses use for their sales, support, and # marketing activities.
-            Today, we look at four simple TextMagic SMS integrations via Zapier that will help you get more
-            value out of your HubSpot account: Send a confirmation text when someone fills out your HubSpot form;
-            Receive SMS notifications whenever a new deal, ticket, or task is added to your HubSpot dashboard; Instantly
-            forward new HubSpot contact data to your TextMagic account and update your lists in real-time; Add SMS
-            unsubscribers from TextMagic to a separate list in HubSpot for retargeting.
-            To get started, you first must connect your HubSpot and TextMagic accounts to your Zapier account.
-            You can do this before creating any Zap, or simply follow the connection steps as you go. Instantly forward
-            new HubSpot contact data to your
-            TextMagic account and update your lists in real-time; Add SMS unsubscribers from TextMagic to a separate
-            list in HubSpot for retargeting.
-            To get started, you first must connect your HubSpot and TextMagic accounts to your Zapier account. You can
-            do this before creating any Zap, or simply follow the connection steps as
-            you go.. Send a confirmation text when someone fills out your HubSpot form; Receive SMS notifications
-            whenever a new deal, ticket, or task is added to your HubSpot dashboard;
-
+            {{ this.body }}
         </article>
     </div>
 
@@ -85,9 +64,14 @@ export default {
     name: 'Article',
     data() {
         return {
-
+            title: JSON.parse(localStorage.getItem("CurrentArticle")).Title,
+            author: JSON.parse(localStorage.getItem("CurrentArticle")).Author,
+            image: JSON.parse(localStorage.getItem("CurrentArticle")).Image,
+            createAt: JSON.parse(localStorage.getItem("CurrentArticle")).CreateAt,
+            body: JSON.parse(localStorage.getItem("CurrentArticle")).Body
         }
-    }
+    },
+
 }
 </script>
 <style scoped>
@@ -179,8 +163,12 @@ export default {
     }
 
     .topArticle button {
-    border-radius: 50%;
-    padding:10px;
-}
+        border-radius: 50%;
+        padding: 10px;
+    }
+
+    .topArticle {
+        padding: 0 20px;
+    }
 }
 </style>

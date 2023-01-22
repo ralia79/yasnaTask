@@ -6,7 +6,7 @@
         </div>
 
         <div class="optionBar d-flex flex-column-reverse flex-lg-row align-items-center justify-content-between ">
-            <div class="d-flex flex-row align-items-center justify-content-lg-start justify-content-between w-100" >
+            <div class="d-flex flex-row align-items-center justify-content-lg-start justify-content-between w-100">
                 <p class="optionItem active ">All</p>
                 <p class="optionItem ">Technology</p>
                 <p class="optionItem ">AI</p>
@@ -20,14 +20,16 @@
     </div>
     <div class="spacer"></div>
     <div class="baseArticles container d-flex flex-row align-items-center justify-content-between flex-wrap">
-        <ShowArticle v-for="item in 10" @click="GoTo()" />
+        <ShowArticle v-for="item in this.Articles" :title="item.title" :desc="item.description"
+            :Auther="item.author.username" :img="item.author.image" :date="new Date(item.createdAt).toISOString()"
+            @click="GoTo(item.title, item.author.username, item.author.image, item.createdAt, item.body)" />
     </div>
 </template>
 
 
 <script>
 import ShowArticle from './ShowArticle.vue';
-
+import axios from 'axios'
 export default {
     name: 'AllArticle',
     props: [],
@@ -35,21 +37,52 @@ export default {
     components: {
         ShowArticle
     },
-    mounted() {
-        this.GetArticle()
-    } ,
+
     data() {
         return {
-
-        };
+            Articles: [],
+            count: 0
+        }
+    },
+    mounted() {
+        this.GetArticle()
     },
     methods: {
-        
-        GoTo() {
-            window.location.href = "/Article"
-        } ,
 
-        GetArticle (){
+        GoTo(title, author, image, createdAt, body) {
+
+            localStorage.setItem("CurrentArticle", JSON.stringify(
+                {
+                Title: title,
+                Author: author,
+                Image: image,
+                CreateAt: createdAt,
+                Body: body
+            }
+            ));
+
+            window.location.href = "/Article"
+        },
+
+        GetArticle() {
+            const url = 'https://api.realworld.io/api/articles';
+            var config = {
+                method: 'get',
+                url: url,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+            };
+            axios(config)
+                .then((response) => {
+                    let data = response.data;
+                    this.Articles = data.articles;
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
     },
 };
@@ -57,8 +90,6 @@ export default {
 
 
 <style scoped>
-
-
 .spacer {
     height: 30px;
 }
@@ -136,24 +167,26 @@ export default {
 }
 
 
-@media only screen and  ( max-width : 992px) {
+@media only screen and (max-width : 992px) {
     .optionBarSearch {
         width: 100%;
         margin-bottom: 20px;
     }
+
     .optionBarSearch input {
         width: 100%;
     }
-    
+
 }
 
 @media only screen and (max-width : 768px) {
     .optionItem {
-    padding: 8px 30px;
-    margin: 0;
-    cursor: pointer;
-    font-family: 'Euclid';
-}
+        padding: 8px 30px;
+        margin: 0;
+        cursor: pointer;
+        font-family: 'Euclid';
+    }
+
     .AllArticle::after {
         content: url("../../../assets/Vector4.png");
         position: absolute;
@@ -174,7 +207,7 @@ export default {
     }
 
     .spacer {
-    height: 60px;
-}
+        height: 60px;
+    }
 }
 </style>

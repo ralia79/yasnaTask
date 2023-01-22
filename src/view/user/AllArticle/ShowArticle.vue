@@ -2,19 +2,17 @@
     <div class=" mb-3 col-md-4 col-6">
         <div class="ArticleItem  d-flex flex-column align-items-start justify-content-start">
             <p class="ArticleItem_title">
-                If we quantify the alarm, we can get to the FTP pixel through the online SSL interface!
+               {{title}}
             </p>
 
             <p class="ArticleItem_desc d-none d-md-flex">
-                Omnis perspiciatis qui quia commodi sequi modi. Nostrum quam aut cupiditate est facere omnis
-                possimus. Tenetur similique nemo illo soluta molestias facere quo. Ipsam totam facilis delectus
-                nihil quidem soluta vel est omnis.
+                {{desc}}
             </p>
             <div class="d-flex flex-row align-items-center Auther_Article">
-                <img src="../../../assets/article_avatar.png" alt="">
+                <img :src="img" alt="">
                 <div class="d-flex flex-column align-items-start justify-content-center ms-2">
-                    <p class="p-0 m-0 Auther_name"> Ali Roshan nia </p>
-                    <p class="p-0 m-0 grey">June 27 ,2024</p>
+                    <p class="p-0 m-0 Auther_name"> {{ Auther }} </p>
+                    <p class="p-0 m-0 grey">{{date}}</p>
                 </div>
             </div>
         </div>
@@ -23,6 +21,15 @@
 <script>
 export default {
     name: 'ShowArticle',
+    props:[
+        "title", 
+        "desc" ,
+        "Auther" , 
+        "date", 
+        "img"
+    ] ,
+    mounted(){
+    } ,
     data() {
         return {
 

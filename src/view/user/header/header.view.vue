@@ -2,7 +2,7 @@
     <header class="bg_custom">
         <div class="container d-flex flex-row align-items-center justify-content-between">
             <nav class="d-none d-sm-flex">
-                <li @click="GoTo('/')">Home</li>
+                <li @click="GoToHome()">Home</li>
                 <li>About Us</li>
             </nav>
             <img src="../../../assets/yasna.png" class="d-flex d-sm-none LOGO">
@@ -11,7 +11,7 @@
             <button class="btnCustom d-flex d-sm-none"
                 @click="GoTo()">
                 <span class="material-symbols-outlined p-0 m-0">
-                    login
+                    {{Icon}}
                 </span>
             </button>
         </div>
@@ -26,10 +26,13 @@ export default {
     data() {
         return {
             btnText: localStorage.getItem("username") ? localStorage.getItem("username") : "Login/Sign up",
-
+            Icon :  localStorage.getItem("username") ? "person" : "Login"
         }
     },
     methods: {
+        GoToHome(){
+            window.location.href = '/'
+        } ,
         GoTo() {
             if (localStorage.getItem("username")) {
                 let text = "Are you sure with LogOut?!\nEither OK or Cancel.";
